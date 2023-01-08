@@ -34,11 +34,14 @@ private:
 	vector <Point> vectorPoints; // vector has grid of points 
 	vector <shape*> selectedShapes;
 	vector <shape*> matchedShapes;
+	
+	
 
 public:
 	stack<shape*> lastEdited;
 	stack<shape*> undolastEdited;
 	stack<shape*> UndolastEdited;
+	vector <shape*> shapesList2;
 	bool isFilled = false;
 	bool isplay = false;
 	int score = 0; // score of user during game
@@ -83,5 +86,8 @@ public:
 	void addMatchedShape(shape*);
 	void clearMatchedShapes();
 	vector<shape*>getSelectedShapes();
+	void takeCopyOfshapesList();
+	void reDraw(GUI* pUI)const;
+
 
 };
